@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo \'hello world\''
+        echo "Building the pipeline"
       }
     }
 
@@ -11,13 +11,13 @@ pipeline {
       parallel {
         stage('Test') {
           steps {
-            sh 'echo "Automation Tests are executing"'
+            echo "Automation Tests are executing"
           }
         }
 
         stage('Unit tests') {
           steps {
-            sh 'echo "Unit tests are building"'
+            echo "Unit tests are building"
           }
         }
 
@@ -26,7 +26,7 @@ pipeline {
 
     stage('Docker build') {
       steps {
-        sh 'echo "Building docker image"'
+        echo "Building docker image"
       }
     }
 
